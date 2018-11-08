@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ExpenseListItem with provided expense 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/edit/1"
+  >
+     
+    <h3>
+      Credit Card Bill
+    </h3>
+     
+  </Link>
+  <p>
+    Rs.
+    10000
+     | 
+    -345600000
+  </p>
+</div>
+`;
