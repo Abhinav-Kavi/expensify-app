@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/ --browser=chrome",
-    "build": "webpack",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server --mode=development",
     "test": "jest --config=jest.config.json"
   },
@@ -25,6 +26,7 @@
     "enzyme-to-json": "3.3.4",
     "jest": "23.6.0",
     "live-server": "^1.2.0",
+    "mini-css-extract-plugin": "0.4.4",
     "moment": "2.22.2",
     "node-sass": "4.9.3",
     "normalize.css": "8.0.0",
@@ -42,8 +44,8 @@
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
     "uuid": "3.3.2",
-    "webpack": "4.20.2",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "3.1.9"
+    "webpack": "^4.25.1",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.10"
   }
 }
