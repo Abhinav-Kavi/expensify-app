@@ -13,10 +13,9 @@ exports[`should render ExpenseListItem with provided expense 1`] = `
      
   </Link>
   <p>
-    Rs.
-    10000
-     | 
-    -345600000
+    ₹10,000.00
+    -
+    December 28th, 1969
   </p>
 </div>
 `;
