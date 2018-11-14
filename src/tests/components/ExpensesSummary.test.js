@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import {ExpensesSummary} from '../../components/ExpensesSummary';
-import '../../../numeralConfig';
+import '../../numeralConfig';
 
 test('should render ExpensesSummary correctly with 1 expense',()=>{
   const wrapper = shallow(<ExpensesSummary expenseCount={1} expensesTotal={100}/>);
