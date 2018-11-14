@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import '../numeralConfig';
-import 'normalize.css/normalize.css'
-import './styles/styles.scss'
+import './numeralConfig';
+import './firebase/firebase';
+import 'normalize.css/normalize.css';
+import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 
 
