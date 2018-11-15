@@ -1,10 +1,18 @@
-import {addExpense, editExpense, removeExpense, startAddExpense} from '../../actions/expenses';
+import {addExpense, editExpense, removeExpense, startAddExpense, startSetExpenses} from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import database from '../../firebase/firebase';
 
 const createMockStore = configureMockStore([thunk]);
+
+beforeEach((done)=>{
+  const expensesData = {};
+  expenses.forEach(({description,amount,id,createdAt, note}) => 
+                      expensesData[id] = {description,amount,createdAt, note});
+
+  database.ref('expenses').set(expensesData).then(()=>done());
+});
 
 test('should setup removeExpense action objesct',()=>{
   const result = removeExpense({id : '123'});
@@ -62,7 +70,7 @@ test('should add default expense to the database and store',(done)=>{
     description : '',
     note : '',
     amount : 0,
-    createdAt : 0
+    createdAt: 0
   };
 
   store.dispatch(startAddExpense({}))
@@ -82,4 +90,15 @@ test('should add default expense to the database and store',(done)=>{
         done();
       });    
    });
+});
+
+test('should fetch the expenses from firebase',()=>{
+  const store = createMockStore({});
+  store.dispatch(startSetExpenses()).then(()=>{
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+      type : 'SET_EXPENSES',
+      expenses
+    });
+  })
 });
