@@ -30,7 +30,7 @@ const renderApp = ()=>{
   }
 };
 
-ReactDOM.render('<p>Loading...</p>',document.getElementById("app"));
+ReactDOM.render(<p>Loading...</p>,document.getElementById("app"));
 
 firebase.auth().onAuthStateChanged((user)=>{
   if(user){
